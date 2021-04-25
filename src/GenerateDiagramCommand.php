@@ -65,7 +65,7 @@ class GenerateDiagramCommand extends Command
             $bar->advance();
             return new GraphModel(
                 $model,
-                (new ReflectionClass($model))->getShortName(),
+                (new $model())->getTable(),
                 $this->relationFinder->getModelRelations($model)
             );
         });
